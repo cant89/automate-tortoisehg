@@ -23,7 +23,7 @@ echo.
 echo.
 
 :: Ask confirmation
-Choice /M "Are you sure you want to create this branch: %idtip%"
+Choice /M "Are you sure you want to create this branch: %idtp%"
 If Errorlevel 2 Goto abort
 If Errorlevel 1 Goto runConfirmed
 
