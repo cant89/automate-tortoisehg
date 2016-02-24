@@ -22,33 +22,46 @@ echo -------------------------
 echo.
 echo.
 
-:: set locale username
-for /f "delims=" %%a in ('hg config -u ui.username') do @set username=%%a
+:: Ask confirmation
+Choice /M "Are you sure you want to create this branch: %idtip%"
+If Errorlevel 2 Goto abort
+If Errorlevel 1 Goto runConfirmed
 
-:: set local repo
-for /f "delims=" %%a in ('hg config -u paths.default') do @set currentrepo=%%a
+:runConfirmed
 
-:: pull
-hg pull --verbose "%currentrepo%"
+	:: set locale username
+	for /f "delims=" %%a in ('hg config -u ui.username') do @set username=%%a
 
-:: update to default
-hg update --config ui.merge=internal:merge --rev default --check
+	:: set local repo
+	for /f "delims=" %%a in ('hg config -u paths.default') do @set currentrepo=%%a
 
-:: create new branch with passed ID
-hg branch --force "%idtp%"
+	:: pull
+	hg pull --verbose "%currentrepo%"
 
-::commit
-hg commit --verbose "--message= branch opened" --user "%username%"
+	:: update to default
+	hg update --config ui.merge=internal:merge --rev default --check
 
-echo.
-echo.
-echo.
-echo ##################
-echo.
-echo Branch successfully created. Enjoy your coding!
-echo.
-echo ##################
-echo.
+	:: create new branch with passed ID
+	hg branch --force "%idtp%"
 
-pause
-exit
+	::commit
+	hg commit --verbose "--message= branch opened" --user "%username%"
+
+	echo.
+	echo.
+	echo.
+	echo ##################
+	echo.
+	echo Branch successfully created. Enjoy your coding!
+	echo.
+	echo ##################
+	echo.
+
+	pause
+	exit
+	
+:abort
+    echo "Operation aborted."
+    pause
+	exit
+
