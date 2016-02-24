@@ -1,4 +1,4 @@
-## YOOX_HGbat
+## TORTOISE HG AUTOMATE BRANCHING
 
 Bat to automate new branch flow in Mainteinance.
 
