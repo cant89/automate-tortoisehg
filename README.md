@@ -4,21 +4,21 @@ Bat to automate new branch flow in Mainteinance.
 
 ## INSTALL
 
-0. Copy bat files wherever you want
-1. Run TortoiseHg ad go to File -> Settings, then select Tools form the left side of the opened window
-2. From the "List of all tools" add a new task for start-work with these options:
-```js
-tool name = start-work
-command = start [path-to-the-start-work-file-on-your-drive] {ROOT} {REV}
-```
-and another new one task for end-work with these options:
-```js
-tool name = end-work
-command = start [path-to-the-end-work-file-on-your-drive] {ROOT} {REV}
-```
-3. Select both commands and click "Add to list" button
-4. Then press OK and restart Tortoise
-5. Enjoy
+1. Copy bat files wherever you want
+2. Run TortoiseHg ad go to File -> Settings, then select Tools form the left side of the opened window
+3. From the "List of all tools" add a new task for start-work with these options:
+  ```js
+  tool name = start-work
+  command = start [path-to-the-start-work-file-on-your-drive] {ROOT} {REV}
+  ```
+  and another new one task for end-work with these options:
+  ```js
+  tool name = end-work
+  command = start [path-to-the-end-work-file-on-your-drive] {ROOT} {REV}
+  ```
+4. Select both commands and click "Add to list" button
+5. Then press OK and restart Tortoise
+6. Enjoy
 
 
 ******************************************************************
