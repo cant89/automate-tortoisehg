@@ -1,12 +1,14 @@
-## TORTOISE HG AUTOMATE BRANCHING
+TORTOISE HG AUTOMATE BRANCHING
+======
 
 Bat to automate new branch flow in Mainteinance.
 
-## INSTALL
+INSTALL
+------
 
 1. Copy bat files wherever you want
 2. Run TortoiseHg ad go to File -> Settings, then select Tools form the left side of the opened window
-3. From the "List of all tools" add a new task for start-work with these options:
+3. From the "List of all tools" add a new task for start-work with these options(replace also squares brackets):
 	```js
 	tool name = start-work
 	command = start [path-to-the-start-work-file-on-your-drive] {ROOT} {REV}
