@@ -36,7 +36,8 @@ These are the operations that are running:
 1. Pull
 2. Update to default
 3. Create new branch
-4. Commit (empty) -  necessary to create the new branch
+4. Commit - could be empty - called "open branch" necessary to create the new branch
+5. END. Now you are ready to work on your branch and manually make every commit you need. When you are at the last commit, launch Bat#2 to end your work
 
 
 ## BAT #2 - END WORK
@@ -52,6 +53,7 @@ These are the operations that are running:
 5. Merge branch with Local (Maintenance)
 6. Commit
 7. Update to default
+8. END. Now you only need to manually Push (for security reason the Bat does not push anything).
 
 ******************************************************************
 
