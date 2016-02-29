@@ -3,8 +3,7 @@ TORTOISE HG AUTOMATE BRANCHING
 
 Bat to automate new branch flow in Mainteinance.
 
-INSTALL
-------
+## INSTALL
 
 1. Copy bat files wherever you want
 2. Run TortoiseHg ad go to File -> Settings, then select Tools form the left side of the opened window
@@ -53,3 +52,21 @@ These are the operations that are running:
 5. Merge branch with Local (Maintenance)
 6. Commit
 7. Update to default
+
+******************************************************************
+
+## FAQ
+
+1. Posso iniziare una nuova lavorazione inserendo come nome del branch quello di un branch già esistente, creato in precedenza?
+
+	No. Per quanto Tortoise non restituisca errori in prima battuta nella creazione di branch con lo stesso nome, darà errori in fase di push, avendo il branch due teste.
+	La procedura corretta è fare un update manuale al branch di riferimento ed eseguire commit manuali.
+
+2. Se nel Merge del Branch con Maintenance nascono dei conflitti, cosa succede?
+
+	In automatico si apre di default Beyond Compare 4, se usi un'altro tool scrivici.
+	n.b: in futuro sarà possibile scegliere il proprio tool di conflitto.
+
+3. E' normale che non vengano fatti i Push in automatico?
+
+	Si, assolutamente! Il bat agisce al 100% in locale, ogni push è volutamente lasciato all'utente per ragioni di sicurezza.
