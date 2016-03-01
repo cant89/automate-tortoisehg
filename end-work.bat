@@ -24,7 +24,7 @@ goto run
 	echo.
     echo "Error: current branch should not be default and maintenance."
     pause
-	
+
 :run
 
 	:: set local username
@@ -42,22 +42,22 @@ goto run
 	::if current branch is "default" or "Maintenance" jump to error
 	if "%currentbranch%" == "default" goto error
 	if "%currentbranch%" == "Maintenance" goto error
-	
+
 	echo.
 	echo.
 	echo -------------------------
 	echo.
-    echo Current branch is %currentbranch% 
+    echo Current branch is %currentbranch%
 	echo.
 	echo -------------------------
-	
+
 	:: Ask confirmation
 	Choice /M "Are you sure you want to continue"
 	If Errorlevel 2 Goto abort
 	If Errorlevel 1 Goto runConfirmed
 
 	:runConfirmed
-	
+
     ::pull
     hg pull --verbose --update --config ui.merge=internal:merge "%currentrepo%"
 
@@ -77,7 +77,7 @@ goto run
     hg merge --tool :merge --verbose "%idrevision%" -t beyondcompare4
 
     ::commit
-    hg commit --verbose "--message= Merge" --user "%username%"
+    hg commit --verbose "--message= Merge with %currentbranch% " --user "%username%"
 
     ::update to default
     hg update --config ui.merge=internal:merge --rev default --check
@@ -91,7 +91,7 @@ goto run
 	echo.
 	echo ##################
 	echo.
-	
+
 	pause
 
 	exit
