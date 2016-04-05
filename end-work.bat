@@ -41,7 +41,7 @@ goto run
 
 	::if current branch is "default" or "Maintenance" jump to error
 	if "%currentbranch%" == "default" goto error
-	if "%currentbranch%" == "Maintenance" goto error
+	if "%currentbranch%" == "maintenance" goto error
 
 	echo.
 	echo.
@@ -71,7 +71,7 @@ goto run
     for /f "delims=" %%a in ('hg identify --num') do @set idrevision=%%a
 
     ::update to maintenance
-    hg update --config ui.merge=internal:merge --rev Maintenance --check
+    hg update --config ui.merge=internal:merge --rev maintenance --check
 
     ::merge branch into maintenance
     hg merge --tool :merge --verbose "%idrevision%" -t beyondcompare4
